@@ -1,6 +1,9 @@
 package ejercicio1;
 
 import java.time.LocalDate;
+import java.util.Iterator;
+
+import javax.swing.tree.ExpandVetoException;
 
 public class Persona {
 	
@@ -29,6 +32,27 @@ public class Persona {
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.email = email;
+	}
+	
+	public static void verificarDNI(String dni) {
+		
+		int cantidadCaracter = dni.length();
+		boolean noEsNumero= false;
+		for (int i=0; i<dni.length();i++) {
+			
+			if(!(Character.isDigit(dni.charAt(i)))) {
+				noEsNumero=true;
+			}
+			
+		}
+		if((cantidadCaracter !=8) || (noEsNumero==true)) {
+			ExVerificarDNI exc1 = new ExVerificarDNI();
+			throw exc1;
+		}
+		
+		
+		
+		
 	}
 	 
 	 
