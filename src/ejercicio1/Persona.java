@@ -1,9 +1,6 @@
 package ejercicio1;
 
 import java.time.LocalDate;
-import java.util.Iterator;
-
-import javax.swing.tree.ExpandVetoException;
 
 public class Persona {
 	
