@@ -16,11 +16,47 @@ public class MainEjercicio1_b {
 		
 
 		ArrayList<Empleado> listaEmpleados = new ArrayList<Empleado> ();
-		listaEmpleados.add(emp1);
-		listaEmpleados.add(emp2);
-		listaEmpleados.add(emp3);
-		listaEmpleados.add(emp4);
-		listaEmpleados.add(emp5);
+		
+		try {
+			Persona.verificarDNI(emp1.getDni());
+			listaEmpleados.add(emp1);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Empleado no agregado por no verificar el DNI"); 
+		}
+		
+		try {
+			Persona.verificarDNI(emp2.getDni());
+			listaEmpleados.add(emp2);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Empleado no agregado por no verificar el DNI"); 
+		}
+		
+		try {
+			Persona.verificarDNI(emp3.getDni());
+			listaEmpleados.add(emp3);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Empleado no agregado por no verificar el DNI"); 
+		}
+		
+		try {
+			Persona.verificarDNI(emp4.getDni());
+			listaEmpleados.add(emp4);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Empleado no agregado por no verificar el DNI"); 
+		}
+		
+		try {
+			Persona.verificarDNI(emp5.getDni());
+			listaEmpleados.add(emp5);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Empleado no agregado por no verificar el DNI"); 
+		}
+		
 		
 		System.out.println("LISTA DE EMPLEADOS");
 		Iterator<Empleado> it = listaEmpleados.iterator();

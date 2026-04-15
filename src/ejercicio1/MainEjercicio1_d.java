@@ -14,11 +14,47 @@ public class MainEjercicio1_d {
 		Persona p5 = new Persona("44444444", "Martin", "Sueldo", LocalDate.of(2000, 1, 1), "Masculino", "Falluta 4", "4444444444", "ejemplo5@gmail.com");
 	
 		HashSet<Persona> listaPersonas = new HashSet<Persona>();
-		listaPersonas.add(p1);
-		listaPersonas.add(p2);
-		listaPersonas.add(p3);
-		listaPersonas.add(p4);
-		listaPersonas.add(p5);
+		
+		try {
+			Persona.verificarDNI(p1.getDni());
+			listaPersonas.add(p1);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Persona no agregado por no verificar el DNI");
+		}
+		
+		try {
+			Persona.verificarDNI(p2.getDni());
+			listaPersonas.add(p2);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Persona no agregado por no verificar el DNI");
+		}
+		
+		try {
+			Persona.verificarDNI(p3.getDni());
+			listaPersonas.add(p3);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Persona no agregado por no verificar el DNI");
+		}
+		
+		try {
+			Persona.verificarDNI(p4.getDni());
+			listaPersonas.add(p4);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Persona no agregado por no verificar el DNI");
+		}
+		
+		try {
+			Persona.verificarDNI(p5.getDni());
+			listaPersonas.add(p5);
+		}
+		catch (ExVerificarDNI e) {
+			System.out.println("Persona no agregado por no verificar el DNI");
+		}
+
 		
 		System.out.println("LISTA DE PERSONAS");
 		Iterator<Persona> it = listaPersonas.iterator();
