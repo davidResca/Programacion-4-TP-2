@@ -1,6 +1,7 @@
 package ejercicio1;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Persona {
 	
@@ -31,7 +32,7 @@ public class Persona {
 		this.email = email;
 	}
 	
-	public static void verificarDNI(String dni) {
+	public static void verificarDNI(String dni) throws ExVerificarDNI {
 		
 		int cantidadCaracter = dni.length();
 		boolean noEsNumero= false;
@@ -111,4 +112,26 @@ public String toString() {
 				", Fecha de Nacimiento= " + fechaNacimiento + ", Genero= " + genero + ", Direccion= " +
 				direccion + ", Telefono= " + telefono + ", Email= " + email;
 	}
+
+@Override
+public int hashCode() {
+	return Objects.hash(apellido, direccion, dni, email, fechaNacimiento, genero, nombre, telefono);
+}
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Persona other = (Persona) obj;
+	return Objects.equals(apellido, other.apellido) && Objects.equals(direccion, other.direccion)
+			&& Objects.equals(dni, other.dni) && Objects.equals(email, other.email)
+			&& Objects.equals(fechaNacimiento, other.fechaNacimiento) && Objects.equals(genero, other.genero)
+			&& Objects.equals(nombre, other.nombre) && Objects.equals(telefono, other.telefono);
+}
+
+
 }
